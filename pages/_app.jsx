@@ -1,5 +1,6 @@
 import { SessionProvider, useSession } from "next-auth/react";
 import LoginBtn from "../components/login-btn";
+import "tailwindcss/tailwind.css";
 
 function AuthWrapper({ children }) {
   const { data: session, status } = useSession();
