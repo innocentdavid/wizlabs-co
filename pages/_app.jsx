@@ -1,5 +1,6 @@
 import { SessionProvider, useSession } from "next-auth/react";
 import LoginBtn from "../components/login-btn";
+import LoadingScreen from "../components/loading";
 import "tailwindcss/tailwind.css";
 
 function AuthWrapper({ children }) {
@@ -8,7 +9,7 @@ function AuthWrapper({ children }) {
   return (
     <>
       {status === "loading" ? (
-        <p>Loading...</p>
+        <LoadingScreen />
       ) : session ? (
         children
       ) : (
