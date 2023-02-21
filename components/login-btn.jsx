@@ -1,12 +1,29 @@
 import { useSession, signIn, signOut } from "next-auth/react";
+import { useState } from "react";
 
 export default function Component() {
   const { data: session } = useSession();
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
   if (session) {
     return (
       <div className="flex flex-col justify-center items-center h-screen bg-gray-900 text-white relative">
         <div className="flex flex-col justify-center items-center w-full h-full">
-          <img src="/monsta.png" alt="Logo" className="h-1/3 z-0 opacity-25" />
+          <img
+            src={isHovering ? "/mmmonsta.png" : "/mmonsta.png"}
+            alt="Logo"
+            className="h-1/3 z-0 opacity-25"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          />
           <div className="text-center p-4 relative z-10">
             Signed in as {session.user.email} <br />
             <button
@@ -33,7 +50,13 @@ export default function Component() {
           </button>
           <p className="mt-5">Not logged in.</p>
         </div>
-        <img src="/mmonsta.png" alt="Logo" className="h-1/3 z-0" />
+        <img
+          src={isHovering ? "/mmmonsta.png" : "/mmonsta.png"}
+          alt="Logo"
+          className="h-1/3 z-0"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
       </div>
     </div>
   );
