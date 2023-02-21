@@ -3,31 +3,26 @@ import { useState } from "react";
 
 export default function Component() {
   const { data: session } = useSession();
-  const [isHovering, setIsHovering] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovering(false);
+  const handleClick = () => {
+    setIsClicked(!isClicked);
   };
 
   if (session) {
     return (
       <div className="flex flex-col justify-center items-center h-screen bg-gray-900 text-white relative">
-        <div className="flex flex-col justify-center items-center w-full h-full">
-          <img
-            src={isHovering ? "/mmmonsta.png" : "/mmonsta.png"}
-            alt="Logo"
-            className="h-1/3 z-0 opacity-25"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          />
-          <div className="text-center p-4 relative z-10">
+        <img
+          src={isClicked ? "/mmmonsta.png" : "/mmonsta.png"}
+          alt="Logo"
+          className="w-40 h-auto z-0"
+          onClick={handleClick}
+        />
+        <div className="flex flex-col justify-center items-center w-full h-full ">
+          <div className="text-center p-4 relative z-10 ">
             Signed in as {session.user.email} <br />
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-40"
               onClick={() => signOut()}
             >
               Sign out
@@ -45,14 +40,13 @@ export default function Component() {
         <div className="text-center p-4 relative z-10">
           <br />
           <img
-            src={isHovering ? "/mmmonsta.png" : "/mmonsta.png"}
+            src={isClicked ? "/mmmonsta.png" : "/mmonsta.png"}
             alt="Logo"
-            className="h-1/3 z-0"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            className="w-48 h-auto z-0"
+            onClick={handleClick}
           />
           <button
-            className="bg-emerald-700 hover:bg-emerald-900 text-white font-bold py-4 px-8 rounded"
+            className="bg-emerald-700 hover:bg-emerald-900 text-white font-bold py-4 px-8 rounded w-40"
             onClick={() => signIn()}
           >
             Log in
