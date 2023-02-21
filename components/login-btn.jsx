@@ -40,8 +40,17 @@ export default function Component() {
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-gray-900 text-white relative">
       <div className="flex flex-col justify-center items-center w-full h-full">
+        <img src={"/loga.png"} alt="Logo" className=" h-24 z-0" />
+
         <div className="text-center p-4 relative z-10">
           <br />
+          <img
+            src={isHovering ? "/mmmonsta.png" : "/mmonsta.png"}
+            alt="Logo"
+            className="h-1/3 z-0"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          />
           <button
             className="bg-emerald-700 hover:bg-emerald-900 text-white font-bold py-4 px-8 rounded"
             onClick={() => signIn()}
@@ -50,13 +59,6 @@ export default function Component() {
           </button>
           <p className="mt-5">Not logged in.</p>
         </div>
-        <img
-          src={isHovering ? "/mmmonsta.png" : "/mmonsta.png"}
-          alt="Logo"
-          className="h-1/3 z-0"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        />
       </div>
     </div>
   );
