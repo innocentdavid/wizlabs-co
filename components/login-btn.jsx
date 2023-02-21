@@ -26,12 +26,12 @@ export default function Component() {
         <div className="text-center p-4 relative z-10">
           <br />
           <button
-            className="bg-emerald-700 hover:bg-blue-900 text-white font-bold py-4 px-8 rounded"
+            className="bg-emerald-700 hover:bg-emerald-900 text-white font-bold py-4 px-8 rounded"
             onClick={() => signIn()}
           >
-            Sign in
+            Log in
           </button>
-          <p className="mt-5">Not signed in.</p>
+          <p className="mt-5">Not logged in.</p>
         </div>
         <img src="/monsta.png" alt="Logo" className="h-1/3 z-0" />
       </div>
