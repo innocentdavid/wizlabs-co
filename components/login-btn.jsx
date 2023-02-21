@@ -33,7 +33,7 @@ export default function Component() {
           </button>
           <p className="mt-5">Not logged in.</p>
         </div>
-        <img src="/monsta.png" alt="Logo" className="h-1/3 z-0" />
+        <img src="/mmonsta.png" alt="Logo" className="h-1/3 z-0" />
       </div>
     </div>
   );
