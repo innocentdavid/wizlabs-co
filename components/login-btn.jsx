@@ -24,13 +24,14 @@ export default function Component() {
     <div className="flex flex-col justify-center items-center h-screen bg-gray-900 text-white relative">
       <div className="flex flex-col justify-center items-center w-full h-full">
         <div className="text-center p-4 relative z-10">
-          Not signed in <br />
+          <br />
           <button
-            className="bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded"
+            className="bg-emerald-700 hover:bg-blue-900 text-white font-bold py-4 px-8 rounded"
             onClick={() => signIn()}
           >
             Sign in
           </button>
+          <p className="mt-5">Not signed in.</p>
         </div>
         <img src="/monsta.png" alt="Logo" className="h-1/3 z-0" />
       </div>
