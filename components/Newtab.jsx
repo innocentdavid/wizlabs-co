@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function newtab() {
+export default function Newtab() {
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
